@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">ARKEM screenshot placeholder 2</title>
+  <desc id="desc">Placeholder for a future ARKEM screenshot showing settlement management.</desc>
+  <rect width="1280" height="720" fill="#17140f"/>
+  <path d="M0 530 C160 480 260 555 420 500 C600 440 720 540 900 470 C1040 416 1150 470 1280 430 L1280 720 L0 720 Z" fill="#2A2520"/>
+  <rect x="260" y="390" width="115" height="90" fill="#3D342C"/>
+  <rect x="450" y="350" width="140" height="130" fill="#3D342C"/>
+  <rect x="700" y="380" width="120" height="100" fill="#3D342C"/>
+  <rect x="910" y="335" width="150" height="145" fill="#3D342C"/>
+  <path d="M240 390 L318 330 L395 390 Z M425 350 L520 280 L615 350 Z M680 380 L760 320 L840 380 Z M885 335 L985 255 L1085 335 Z" fill="#5C4F42"/>
+  <text x="640" y="170" fill="#F0E6CC" font-family="Georgia, serif" font-size="46" font-weight="700" text-anchor="middle">ARKEM Screenshot Placeholder</text>
+  <text x="640" y="226" fill="#D9C89A" font-family="Georgia, serif" font-size="24" text-anchor="middle">Settlement management slot - not final game footage</text>
+</svg>

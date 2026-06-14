@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">ARKEM screenshot placeholder 3</title>
+  <desc id="desc">Placeholder for a future ARKEM screenshot showing third-person exploration.</desc>
+  <rect width="1280" height="720" fill="#0D0B09"/>
+  <path d="M0 420 L180 360 L310 400 L470 320 L650 405 L820 330 L980 390 L1280 340 L1280 720 L0 720 Z" fill="#1A1810"/>
+  <path d="M0 570 C240 500 390 585 650 515 C850 462 1020 532 1280 475 L1280 720 L0 720 Z" fill="#2A2520"/>
+  <circle cx="640" cy="430" r="34" fill="#C84B1A"/>
+  <path d="M640 465 L602 565 L678 565 Z" fill="#5C4F42"/>
+  <path d="M582 512 L698 512" stroke="#B8961A" stroke-width="12"/>
+  <text x="640" y="160" fill="#F0E6CC" font-family="Georgia, serif" font-size="46" font-weight="700" text-anchor="middle">ARKEM Screenshot Placeholder</text>
+  <text x="640" y="216" fill="#D9C89A" font-family="Georgia, serif" font-size="24" text-anchor="middle">Third-person exploration slot - not final game footage</text>
+</svg>

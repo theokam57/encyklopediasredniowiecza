@@ -1,0 +1,33 @@
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'about/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'contact/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'css/style.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'js/main.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'privacy/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'projects/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'robots.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'site.webmanifest', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'sitemap.xml', LF will be replaced by CRLF the next time Git touches it
+ README.md              |  207 [32m+++++[m[31m---[m
+ about/index.html       |  187 [32m++++[m[31m---[m
+ contact/index.html     |  215 [32m++++[m[31m----[m
+ css/style.css          | 1013 [32m+++++++++++++++++[m[31m------------------[m
+ de/about/index.html    |  149 [31m------[m
+ de/contact/index.html  |  194 [31m-------[m
+ de/index.html          |  249 [31m---------[m
+ de/privacy/index.html  |  156 [31m------[m
+ de/projects/index.html |  225 [31m--------[m
+ index.html             |  272 [32m+++++[m[31m-----[m
+ js/main.js             | 1363 [32m+++++++++++++++++++++++++++++++++++++++++++++[m[31m---[m
+ pl/about/index.html    |  149 [31m------[m
+ pl/contact/index.html  |  194 [31m-------[m
+ pl/index.html          |  249 [31m---------[m
+ pl/privacy/index.html  |  156 [31m------[m
+ pl/projects/index.html |  225 [31m--------[m
+ privacy/index.html     |  167 [32m+++[m[31m---[m
+ projects/index.html    |  308 [32m+++++[m[31m------[m
+ robots.txt             |    2 [32m+[m[31m-[m
+ site.webmanifest       |   16 [32m+[m[31m-[m
+ sitemap.xml            |  140 [32m+[m[31m----[m
+ 21 files changed, 2446 insertions(+), 3390 deletions(-)

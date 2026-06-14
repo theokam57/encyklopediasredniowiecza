@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">ARKEM screenshot placeholder 1</title>
+  <desc id="desc">Placeholder for a future ARKEM screenshot showing castle building.</desc>
+  <rect width="1280" height="720" fill="#1A1810"/>
+  <path d="M0 500 L120 465 L260 498 L410 430 L560 485 L700 390 L880 465 L1040 410 L1280 480 L1280 720 L0 720 Z" fill="#2A2520"/>
+  <path d="M340 500 L340 315 L410 315 L410 260 L490 260 L490 500 Z M560 500 L560 350 L645 350 L645 292 L725 292 L725 500 Z M790 500 L790 330 L865 330 L865 276 L940 276 L940 500 Z" fill="#3D342C"/>
+  <text x="640" y="170" fill="#F0E6CC" font-family="Georgia, serif" font-size="46" font-weight="700" text-anchor="middle">ARKEM Screenshot Placeholder</text>
+  <text x="640" y="226" fill="#D9C89A" font-family="Georgia, serif" font-size="24" text-anchor="middle">Castle building slot - not final game footage</text>
+</svg>

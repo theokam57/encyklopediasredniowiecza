@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Studio workshop placeholder</title>
+  <desc id="desc">A local placeholder for Exovision Games studio workshop imagery.</desc>
+  <rect width="1200" height="800" fill="#1A1810"/>
+  <rect x="180" y="170" width="840" height="430" rx="4" fill="#2A2520"/>
+  <rect x="230" y="230" width="330" height="210" fill="#3D342C"/>
+  <rect x="620" y="230" width="330" height="210" fill="#3D342C"/>
+  <path d="M230 520 H950" stroke="#B8961A" stroke-width="6" opacity=".5"/>
+  <polygon points="600,84 664,132 640,208 560,208 536,132" fill="#C84B1A"/>
+  <text x="600" y="665" fill="#F0E6CC" font-family="Georgia, serif" font-size="44" font-weight="700" text-anchor="middle">Studio Workshop Placeholder</text>
+  <text x="600" y="716" fill="#D9C89A" font-family="Georgia, serif" font-size="24" text-anchor="middle">Replace with real local studio or production artwork</text>
+</svg>

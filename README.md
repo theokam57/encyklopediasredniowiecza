@@ -1,119 +1,170 @@
 # Exovision Games - Website
 
-Static website for Exovision Games with a dark medieval forge aesthetic, ember accents, parchment tones, and clean multilingual URLs.
-
-No framework and no build system are required. The production files are plain HTML, CSS, and JavaScript.
-
-## Folder structure
+Statyczna strona HTML/CSS/JS dla Exovision Games, przygotowana pod GitHub Pages i domenę:
 
 ```txt
-exovision_medieval_site/
-|-- index.html                  # EN home, /
-|-- projects/index.html          # EN projects, /projects/
-|-- contact/index.html           # EN contact, /contact/
-|-- about/index.html             # EN imprint, /about/
-|-- privacy/index.html           # EN privacy policy, /privacy/
-|-- de/index.html                # DE home, /de/
-|-- de/projects/index.html
-|-- de/contact/index.html
-|-- de/about/index.html
-|-- de/privacy/index.html
-|-- pl/index.html                # PL home, /pl/
-|-- pl/projects/index.html
-|-- pl/contact/index.html
-|-- pl/about/index.html
-|-- pl/privacy/index.html
-|-- css/style.css
-|-- js/main.js
-|-- assets/images/              # Add ARKEM and OG images here before deploy
-|-- icons/                      # Add favicon.svg, icon-192.png, icon-512.png
-|-- robots.txt
-|-- sitemap.xml
-|-- site.webmanifest
-`-- README.md
+https://encyklopediasredniowiecza.pl/
 ```
 
-The old `pages/*.html` structure has been replaced by folder-based clean URLs so a standard static host can serve each route from an `index.html` file.
+Plik `CNAME` musi zawierać dokładnie:
 
-## Languages
+```txt
+encyklopediasredniowiecza.pl
+```
 
-The site has three manually maintained language versions:
+Strona gry ARKEM działa osobno jako zewnętrzna subdomena:
 
-- English: `/`, `/projects/`, `/contact/`, `/about/`, `/privacy/`
-- German: `/de/`, `/de/projects/`, `/de/contact/`, `/de/about/`, `/de/privacy/`
-- Polish: `/pl/`, `/pl/projects/`, `/pl/contact/`, `/pl/about/`, `/pl/privacy/`
+```txt
+https://arkem.encyklopediasredniowiecza.pl/
+```
 
-Every page includes:
+## Struktura
 
-- the correct `<html lang="">`;
-- translated title and meta description;
-- canonical URL;
-- `hreflang` links for EN, DE, PL, and `x-default`;
-- language-specific Open Graph locale;
-- a language switcher in desktop and mobile navigation.
+Aktywne ścieżki strony:
 
-To add a new page, create the same folder path in all three language trees, translate the visible content, update the navigation or footer if needed, add canonical and `hreflang` links, and add all three URLs to `sitemap.xml`.
+```txt
+/
+/studio/
+/projects/
+/contact/
+/press/
+/about/
+/privacy/
+```
 
-## Contact form endpoint
+Rola stron:
 
-The contact form logic lives in `js/main.js`.
+- `/` - strona główna studia i skrót oferty.
+- `/studio/` - informacje o Exovision Games / Exovision.
+- `/projects/` - ARKEM, gameplay pillars, assety, narzędzia i współpraca.
+- `/contact/` - formularz kontaktowy, email, Discord i adres prawny.
+- `/press/` - press kit: boilerplate, factsheet, opis ARKEM i lista assetów.
+- `/about/` - imprint / legal notice.
+- `/privacy/` - polityka prywatności.
 
-Set:
+Nie ma osobnych folderów językowych `/pl/` i `/de/`. Tłumaczenia działają w przeglądarce przez JavaScript.
+
+## Tłumaczenia i `?lang=`
+
+Tłumaczenia EN / PL / DE znajdują się w `js/main.js` w obiekcie `translations`.
+
+Obsługiwane są atrybuty:
+
+```txt
+data-i18n
+data-i18n-html
+data-i18n-content
+data-i18n-alt
+data-i18n-aria-label
+data-i18n-placeholder
+```
+
+Priorytet wyboru języka:
+
+1. Parametr URL `?lang=en`, `?lang=pl` albo `?lang=de`.
+2. Wartość `localStorage` pod kluczem `site-language`.
+3. Język przeglądarki.
+4. Fallback `en`.
+
+Przykłady:
+
+```txt
+https://encyklopediasredniowiecza.pl/?lang=pl
+https://encyklopediasredniowiecza.pl/projects/?lang=de
+```
+
+Kliknięcie przełącznika `EN | PL | DE` zapisuje wybór w `localStorage` i aktualizuje parametr `?lang=` bez przeładowania strony.
+
+## Formularz kontaktowy
+
+Repozytorium nie zawiera backendu. Endpoint ustawia się w `js/main.js`:
 
 ```js
 const CONTACT_ENDPOINT = 'REPLACE_WITH_YOUR_ENDPOINT';
 ```
 
-to your real backend, Formspree, Netlify Forms function, or similar endpoint. Until this placeholder is replaced, the form does not pretend to send anything. It shows a translated message asking visitors to email `info@exovision.de` directly.
+Dopóki endpoint nie jest skonfigurowany, formularz:
 
-The current JavaScript:
+- waliduje pola po stronie przeglądarki,
+- sprawdza honeypot `website`,
+- wymaga zgody na przetwarzanie danych,
+- nie udaje wysłania wiadomości,
+- pokazuje komunikat o braku konfiguracji,
+- udostępnia link `mailto:info@exovision.de`.
 
-- validates with `form.checkValidity()` and `form.reportValidity()`;
-- sends via `fetch()` only when the endpoint is configured;
-- disables the submit button during sending;
-- shows translated success and error states;
-- never shows success when the endpoint is missing or returns an error.
+Po ustawieniu prawdziwego endpointu formularz wysyła JSON metodą `POST`.
+
+## Fonty
+
+Strona nie ładuje Google Fonts ani `fonts.gstatic.com`. CSS korzysta z lokalnych/systemowych fontów.
+
+Opcjonalne lokalne fonty można dodać do:
+
+```txt
+assets/fonts/
+```
+
+Przykładowe nazwy, jeżeli w przyszłości mają zostać użyte:
+
+```txt
+assets/fonts/Cinzel-Regular.woff2
+assets/fonts/Cinzel-SemiBold.woff2
+assets/fonts/CinzelDecorative-Bold.woff2
+assets/fonts/CrimsonPro-Regular.woff2
+```
+
+Po dodaniu realnych plików można aktywować `@font-face` w `css/style.css`.
+
+## Assets
+
+Aktualnie repozytorium zawiera lokalne placeholdery SVG w:
+
+```txt
+assets/images/placeholders/
+```
+
+To nie są finalne screenshoty ani materiały prasowe. Przed publikacją realnych materiałów należy ręcznie podmienić lub dodać:
+
+```txt
+assets/images/og-image.jpg
+assets/images/arkem-hero.jpg
+assets/images/arkem-screenshot-1.jpg
+assets/images/arkem-screenshot-2.jpg
+assets/images/arkem-screenshot-3.jpg
+assets/images/studio-workshop.jpg
+assets/images/press-kit-preview.jpg
+```
+
+Strona nie hotlinkuje obrazów z zewnętrznych domen. Elementy z `data-real-src` i `data-real-bg` próbują użyć lokalnego realnego assetu, a gdy go nie ma, zostają przy lokalnym placeholderze.
 
 ## SEO
 
-`sitemap.xml` contains all 15 clean URLs and uses `2026-06-13` as `<lastmod>`. Update that date before deployment if content changes again.
-
-`robots.txt` allows crawling and points to:
+Canonical URL-e wskazują wyłącznie aktywne adresy:
 
 ```txt
-https://www.exovision-games.com/sitemap.xml
+https://encyklopediasredniowiecza.pl/
+https://encyklopediasredniowiecza.pl/studio/
+https://encyklopediasredniowiecza.pl/projects/
+https://encyklopediasredniowiecza.pl/contact/
+https://encyklopediasredniowiecza.pl/press/
+https://encyklopediasredniowiecza.pl/about/
+https://encyklopediasredniowiecza.pl/privacy/
 ```
 
-Canonical URLs and `hreflang` tags assume the production domain is `https://www.exovision-games.com`. Change that domain consistently in every HTML file and in `sitemap.xml` if the site is deployed elsewhere.
+`sitemap.xml` zawiera 7 adresów. `robots.txt` wskazuje:
 
-## Assets before deployment
+```txt
+https://encyklopediasredniowiecza.pl/sitemap.xml
+```
 
-Add real assets before publishing:
+## Checklist przed publikacją
 
-- `assets/images/og-image.jpg` at 1200x630 for social previews;
-- `assets/images/arkem-hero.jpg` for the home hero background;
-- `assets/images/arkem-screenshot-1.jpg` or other real ARKEM visuals when available;
-- `icons/favicon.svg`;
-- `icons/icon-192.png`;
-- `icons/icon-512.png`.
-
-Do not add invented gameplay screenshots. The current HTML uses styled placeholders so the site remains usable until real images exist.
-
-## Fonts and privacy
-
-The site still loads Google Fonts via `@import` in `css/style.css`:
-
-- Cinzel Decorative;
-- Cinzel;
-- Crimson Pro.
-
-The privacy policy in all three languages mentions Google Fonts. For stricter privacy, self-host the font files in a `fonts/` directory, replace the Google Fonts import with local `@font-face` rules, and then update all privacy-policy pages to remove the Google Fonts disclosure.
-
-## Deployment checklist
-
-- Configure `CONTACT_ENDPOINT` in `js/main.js`.
-- Add production images and icons listed above.
-- Update `<lastmod>` dates in `sitemap.xml` if needed.
-- Confirm the production domain in canonicals, `hreflang`, OG URLs, `robots.txt`, and `sitemap.xml`.
-- Review the German `Impressum` and all privacy-policy text with legal counsel before publishing.
-- Test `/`, `/projects/`, `/contact/`, `/about/`, `/privacy/`, `/de/...`, and `/pl/...` on the final static host.
+- Sprawdź, czy `CNAME` zawiera tylko `encyklopediasredniowiecza.pl`.
+- Sprawdź, czy nie ma aktywnych katalogów ani linków do `/pl/` lub `/de/`.
+- Sprawdź, czy wszystkie linki ARKEM prowadzą do `https://arkem.encyklopediasredniowiecza.pl/`.
+- Sprawdź `?lang=en`, `?lang=pl`, `?lang=de` na każdej stronie.
+- Przetestuj zapis języka w `localStorage`.
+- Przetestuj zmianę `document.title` i meta description po zmianie języka.
+- Skonfiguruj `CONTACT_ENDPOINT` albo zostaw komunikat o braku konfiguracji.
+- Dodaj finalne obrazy w `assets/images/`.
+- Po dodaniu realnych grafik zaktualizuj social preview, jeśli placeholder SVG nie ma być publicznym OG image.
